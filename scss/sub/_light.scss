@@ -85,7 +85,7 @@
                         padding: 4px;
                         
                         li {
-                            padding: 7px 30px;
+                            padding: 7px 20px;
                             display: flex;
                             justify-content: space-between;
                             border-radius: 4px;
@@ -271,7 +271,7 @@
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                padding: 10px 0px;
+                // padding: 0px;
 
                 >li {
                     width: 100%;
@@ -290,12 +290,8 @@
                                 background-color: blue;
                                 position: absolute;
                                 z-index: 100;
-                                left: 0%;
+                                left: 0px;
                                 opacity: 0;
-        
-                                &.on {
-                                    opacity: 1;
-                                }
                             }
         
         
@@ -309,9 +305,17 @@
                                 }
                             
                             }
+
+                            &.on {
+                                .bar {
+                                    opacity: 1;
+                                }
+                            }
         
                         }
                     }
+
+
                 }
             }
 
