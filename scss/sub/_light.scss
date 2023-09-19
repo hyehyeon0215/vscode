@@ -271,7 +271,6 @@
                 flex-direction: column;
                 justify-content: space-between;
                 align-items: center;
-                // padding: 0px;
 
                 >li {
                     width: 100%;
@@ -280,14 +279,17 @@
                         flex-direction: column;
                         justify-content: center;
                         align-items: center;
-                        gap: 10px;
-        
+
                         li {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            height: 50px;
         
                             .bar {
                                 width: 2px;
                                 height: 50px;
-                                background-color: blue;
+                                background-color: $blue;
                                 position: absolute;
                                 z-index: 100;
                                 left: 0px;

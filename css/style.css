@@ -254,12 +254,17 @@ a {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+}
+.vs-wrap main .main-left .icon-tab > li ul li {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
 }
 .vs-wrap main .main-left .icon-tab > li ul li .bar {
   width: 2px;
   height: 50px;
-  background-color: blue;
+  background-color: #0078D4;
   position: absolute;
   z-index: 100;
   left: 0px;
