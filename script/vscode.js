@@ -1,5 +1,6 @@
 const header_gnb = document.querySelectorAll('.header-menu > li');
 const bar_icon = document.querySelectorAll('.bar-icon > li');
+const gnb_1depth = document.querySelector('.menu_1depth > li > a ');
 
 header_gnb.forEach((el)=>{
     el.addEventListener(("click"),(e)=>{
