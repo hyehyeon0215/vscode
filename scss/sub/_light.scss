@@ -71,7 +71,7 @@
                             color: $light-font1;
                         }
                     }
-        
+
                     .header-sub {
                         display: none;
                         position: absolute;
@@ -138,6 +138,11 @@
                     }
 
                     &.on {
+
+                        >a {
+                            background-color: $light-border;
+                            color: $light-font1;
+                        }
                         .header-sub {
                             display: block;
                         }
@@ -365,11 +370,11 @@
 
                         .menu_1depth {
                             >li {
-                                padding: 5px 10px 0px;
-
                                 >a {
+                                    display: block;
                                     font: bold 14px/1 '맑은 고딕';
                                     color: #000;
+                                    padding: 5px;
 
                                     &::before {
                                         display: inline-block;
@@ -386,8 +391,9 @@
                                 }
 
                                 .menu_2depth {
-                                    padding: 10px 0;
+                                    padding: 7px 0;
                                     transition: padding 0.5s;
+                                    opacity: 1;
 
                                     >li {
                                         margin-left: 25px;
@@ -455,7 +461,7 @@
                                         height: 0px;
                                         overflow: hidden;
                                         padding: 0px;
-                                        margin-bottom: 10px;
+                                        opacity: 0;
                                     }
 
                                 }
@@ -464,7 +470,6 @@
 
                         >.menu-bottom {
                             width: 100%;
-                            transition: 0.5s;
                             position: absolute;
                             bottom: 0;
 
@@ -474,26 +479,24 @@
                                     display: block;
                                     font: bold 14px/1 '맑은 고딕';
                                     color: #000;
-                                    padding: 5px 10px;
+                                    padding: 5px;
+
+                                    &::before {
+                                        display: inline-block;
+                                        content: '∨';
+                                        transform: rotate(-90deg);
+                                        margin-right: 5px;
+                                    }
                                 }
                             }
 
                             &.gotop {
-                                position: static;
+                                bottom: auto;
+                                top: 24px;
                             }
                         }
     
                     }
-                }
-    
-
-    
-                .bottom {
-                    width: 100%;
-                    position: absolute;
-                    bottom: 0;
-
-                    
                 }
     
             }
