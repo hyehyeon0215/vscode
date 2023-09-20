@@ -2,12 +2,13 @@ const header_gnb = document.querySelectorAll('.header-menu > li');
 const bar_icon = document.querySelectorAll('.bar-icon > li');
 const gnb_1depth = document.querySelector('.menu_1depth > li > a ');
 
-const menu_portfolio = document.querySelector('.menu-portfolio');
-const menu_portfolioBtn = menu_portfolio.querySelector('.bracket');
-const menu_portfolioList = menu_portfolio.querySelector('ul');
+const menu_portfolioBtn = document.querySelector('.menu-portfolio > .bracket');
+const menu_portfolioList = document.querySelector('.menu_3depth');
 
 const menu_Btn = document.querySelector('.menu-btn > .bracket');
 const menu_List = document.querySelector('.menu_2depth');
+
+const menu_bottom = document.querySelector('.menu-bottom');
 
 header_gnb.forEach((el)=>{
     el.addEventListener(("click"),(e)=>{
@@ -51,8 +52,10 @@ menu_Btn.addEventListener(("click"), (e)=>{
     if(menu_Btn.classList.contains('off')) {
         menu_Btn.classList.remove('off');
         menu_List.classList.remove('off');
+        menu_bottom.classList.remove('gotop');
     } else {
         menu_Btn.classList.add('off');
         menu_List.classList.add('off');
+        menu_bottom.classList.add('gotop');
     }
 })
