@@ -409,7 +409,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
+  gap: 5px;
 }
 .vs-wrap header .header-left .header-menu > li:first-child a {
   font-weight: bold;
@@ -794,7 +794,8 @@ a {
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) > .menu-bottom {
   width: 100%;
   position: absolute;
-  bottom: 0;
+  top: calc(100% - 50px);
+  transition: top 0.5s;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) > .menu-bottom li {
   border-top: 1px solid #dfdfdf;
@@ -812,7 +813,6 @@ a {
   margin-right: 5px;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) > .menu-bottom.gotop {
-  bottom: auto;
   top: 24px;
 }
 .vs-wrap footer {

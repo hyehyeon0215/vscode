@@ -49,7 +49,7 @@
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                gap: 10px;
+                gap: 5px;
         
                 >li {
                     &:first-child {
@@ -529,7 +529,8 @@
                         >.menu-bottom {
                             width: 100%;
                             position: absolute;
-                            bottom: 0;
+                            top: calc(100% - 50px);
+                            transition: top 0.5s;
 
                             li {
                                 border-top: 1px solid #dfdfdf;
@@ -549,7 +550,6 @@
                             }
 
                             &.gotop {
-                                bottom: auto;
                                 top: 24px;
                             }
                         }
@@ -558,7 +558,6 @@
 
 
                 }
-    
             }
         
 
