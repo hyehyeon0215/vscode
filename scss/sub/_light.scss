@@ -1,583 +1,87 @@
-.vs-wrap {
-    width: 100%;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
+.main-right {
+    width: calc(100% - 250px);
+    height: 100%;
     overflow: hidden;
 
-    header {
-        position: relative;
+    .active-tab {
         width: 100%;
-        height: 35px;
+        height: 32px;
         background-color: $light;
         border-bottom: 1px solid $light-border;
+        position: relative;
+        z-index: 2;
         display: flex;
-        justify-content: center;
+
+        >li{
+            min-width: 150px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-right: 1px solid $light-border;
+
+            >a {
+                font-size: 14px;
+                color: #000;
+            }
+
+            &.active {
+                background-color: #fff;
+                margin-bottom: 0px;
+                box-shadow: 0 1px 1px #f8f8f8;
+                position: relative;
+
+                &::before {
+                    display: block;
+                    content: '';
+                    width: 100%;
+                    height: 1px;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    background-color: $blue;
+                }
+            }
+        }
+    }
+
+    .active-route {
+        width: 100%;
+        height: 24px;
+        background-color: #fff;
+        box-shadow: 0 1px 5px #ddd;
+        padding: 0 15px;
+        display: flex;
         align-items: center;
 
-        .header-left {
-            display: flex;
-            flex: 4;
-            height: 100%;
+        >span {
+            font-size: 12px;
+            color: #666;
+        }
+    }
 
-            h1 {
-                width: 50px;
-                height: 100%;
+    .content-box {
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+
+        >.div {
+            width: 100%;
+            height: 100%;
+            >ul {
+                width: 100%;
                 display: flex;
-                align-items: center;
-                justify-content: center;
-        
-                a {
-                    display: block;
-                    width: 25px;
-                    height: 25px;
-                    position: relative;
-        
+
+                >li {
+                    flex: 1;
+
                     img {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
                         width: 100%;
                         height: 100%;
                         object-fit: cover;
                     }
                 }
             }
-
-            .header-menu {
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-        
-                >li {
-                    &:first-child {
-                        a {
-                            font-weight: bold;
-                        }
-                    }
-        
-                    >a {
-                        display: block;
-                        font: 14px/1 'NotoSansKR';
-                        color: $light-font3;
-                        width: 100%;
-                        height: 100%;
-                        border-radius: 5px;
-                        padding: 5px 7px;
-
-                        &:hover {
-                            background-color: $light-border;
-                            color: $light-font1;
-                        }
-                    }
-
-                    .header-sub {
-                        display: none;
-                        position: absolute;
-                        top: 30px;
-                        width: 300px;
-                        background-color: #fff;
-                        box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.04);
-                        z-index: 3;
-                        border-radius: 7px;
-                        border: 1px solid #ddd;
-                        padding: 4px;
-                        
-                        li {
-                            padding: 7px 20px;
-                            display: flex;
-                            justify-content: space-between;
-                            border-radius: 4px;
-        
-                            a {
-                                display: block;
-                                font: 14px/1 '맑은 고딕';
-                                color: #333;
-                                font-weight: bold;
-                            }
-
-                            span {
-                                display: block;
-                                font: 12px/1 '맑은 고딕';
-                                color: #333;
-                                cursor: default;
-
-                                &.marginleft {
-                                    display: inline-block;
-                                    margin-left: 1px;
-                                }
-                            }
-
-                            &:hover {
-                                background-color: #dfdfdf;
-                            }
-
-                            &.sub-line {
-                                width: 100%;
-                                height: 14px;
-                                position: relative;
-                                &::after {
-                                    display: block;
-                                    width: calc(100% + 8px);
-                                    height: 0.5px;
-                                    opacity: .7;
-                                    content: '';
-                                    position: absolute;
-                                    top: 50%;
-                                    left: 50%;
-                                    transform: translate(-50%, -50%);
-                                    background-color: #ddd;
-                                }
-                                &:hover {
-                                    background-color: inherit;
-                                }
-                            }
-                        }
-                    
-                    }
-
-                    &.on {
-
-                        >a {
-                            background-color: $light-border;
-                            color: $light-font1;
-                        }
-                        .header-sub {
-                            display: block;
-                        }
-                    }
-                }
-        
-            }
-        }
-
-        .header-center {
-            flex: 10;
-
-            >p {
-                font: 14px/24px 'NotoSansKR';
-                text-align: center;
-                color: $light-font3;
-            }
-        }
-
-        .header-right {
-            flex: 4;
-            height: 100%;
-            display: flex;
-            justify-content: end;
-            gap: 20px;
-
-            >ul {
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-
-                >li {
-                    width: 20px;
-                    height: 20px;
-
-                    >a {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                        position: relative;
-
-                        >img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            z-index: 1;
-                            opacity: 1;
-
-                            &:nth-of-type(2) {
-                                z-index: 0;
-                                opacity: 0;
-                            }
-                        }
-                    }
-                }
-
-                &.layout-menu {
-                    gap: 10px;
-                }
-
-                &.program-menu {
-                    gap: 25px;
-                    margin: 0 20px;
-
-                    >li {
-                        width: 25px;
-                        height: 25px;
-                    }
-                }
-
-            }
-
-            .layout-menu {
-                height: 100%;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                gap: 10px;
-
-                >li {
-                    width: 20px;
-                    height: 20px;
-
-                    >a {
-                        display: block;
-                        width: 100%;
-                        height: 100%;
-                        position: relative;
-
-                        >img {
-                            width: 100%;
-                            height: 100%;
-                            object-fit: cover;
-                            position: absolute;
-                            top: 50%;
-                            left: 50%;
-                            transform: translate(-50%, -50%);
-                            z-index: 1;
-                            opacity: 1;
-
-                            &:nth-of-type(2) {
-                                z-index: 0;
-                                opacity: 0;
-                            }
-                        }
-                    }
-                }
-            }
         }
     }
 
-    main {
-        width: 100%;
-        height: calc(100vh - 55px);
-        display: flex;
-
-        .main-left {
-            display: flex;
-
-            .icon-tab {
-                width: 50px;
-                height: 100%;
-                background-color: $light;
-                border-right: 1px solid $light-border;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-between;
-                align-items: center;
-
-                >li {
-                    width: 100%;
-                    ul {
-                        display: flex;
-                        flex-direction: column;
-                        justify-content: center;
-                        align-items: center;
-
-                        li {
-                            display: flex;
-                            justify-content: center;
-                            align-items: center;
-                            height: 50px;
-        
-                            .bar {
-                                width: 3px;
-                                height: 50px;
-                                background-color: $blue;
-                                position: absolute;
-                                z-index: 100;
-                                left: 0px;
-                                opacity: 0;
-                            }
-        
-        
-                            a {
-                                display: block;
-                                width: 40px;
-                                height: 40px;
-                                
-                                img {
-                                    width: 100%; height: 100%; object-fit: cover;
-                                }
-                            
-                            }
-
-                            &.on {
-                                .bar {
-                                    opacity: 1;
-                                }
-                            }
-        
-                        }
-                    }
-
-
-                }
-            }
-
-            .main-menu {
-                width: 200px;
-                height: calc(100vh - 55px);
-                background-color: #f8f8f8;
-                border-right: 1px solid #dfdfdf;
-                display: flex;
-                flex-direction: column;
-
-                >li {
-                    &:nth-of-type(1) {
-                        width: 100%;
-                        display: flex;
-                        align-items: center;
-                        justify-content: space-between;
-                        top: 0;
-                        left: 0;
-                        padding: 10px 20px;
-        
-                        p {
-                            font: 12px/1 'arial';
-                        }
-        
-                        .dot {
-                            display: flex;
-                            justify-content: space-between;
-                            align-items: center;
-                            gap: 5px;
-        
-                            span {
-                                width: 3px;
-                                height: 3px;
-                                border-radius: 50%;
-                                background-color: #000;
-                            }
-                        }
-                    }
-
-                    &:nth-of-type(2) {
-                        width: 100%;
-                        height: calc(100% - 32px);
-                        position: relative;
-
-                        .menu_1depth {
-                            >li {
-                                >a {
-                                    display: block;
-                                    font: bold 14px/1 '맑은 고딕';
-                                    color: #000;
-                                    padding: 5px;
-
-                                    &::before {
-                                        display: inline-block;
-                                        content: '∨';
-                                        margin-right: 5px;
-                                    }
-
-                                    
-                                    &.off {
-                                        &::before {
-                                            transform: rotate(-90deg);
-                                        }
-                                    }
-                                }
-
-                                .menu_2depth {
-                                    padding: 7px 0;
-                                    transition: padding 0.5s;
-                                    opacity: 1;
-
-                                    >li {
-                                        margin-left: 25px;
-                                        position: relative;
-                                        align-items: center;
-                                        gap: 5px;
-                                        margin-bottom: 10px;
-
-                                        >a {
-                                            height: 16px;
-                                            font: 14px/1 '맑은 고딕';
-                                            color: #000;
-                                            display: flex;
-                                            align-items: center;
-
-                                            &.bracket {
-                                                position: relative;
-                                                &::before {
-                                                    display: block;
-                                                    position: absolute;
-                                                    content: '∨';
-                                                    left: -15px;
-                                                }
-
-                                                &.off {
-                                                    &::before {
-                                                        transform: rotate(-90deg);
-                                                    }
-                                                }
-                                            }
-                                        }
-
-                                        .menu_3depth {
-                                            overflow: hidden;
-                                            padding: 15px 0 0;
-                                            transition: padding 0.5s;
-                                            opacity: 1;
-
-                                            >li {
-                                                margin-left: 7px;
-                                                position: relative;
-                                                display: flex;
-                                                align-items: center;
-                                                gap: 5px;
-                                                margin-bottom: 10px;
-
-                                                >a {
-                                                    display: inline-block;
-                                                    height: 16px;
-                                                    font: 14px/16px '맑은 고딕';
-                                                    color: #000;
-                                                }
-                                            }
-
-                                            &.off {
-                                                height: 0px;
-                                                overflow: hidden;
-                                                padding: 0px;
-                                                opacity: 0;
-                                            }
-                                        }
-                                    }
-
-                                    &.off {
-                                        height: 0px;
-                                        overflow: hidden;
-                                        padding: 0px;
-                                        opacity: 0;
-                                    }
-
-                                }
-                            }
-                        }
-
-                        >.menu-bottom {
-                            width: 100%;
-                            position: absolute;
-                            bottom: 0;
-
-                            li {
-                                border-top: 1px solid #dfdfdf;
-                                a {
-                                    display: block;
-                                    font: bold 14px/1 '맑은 고딕';
-                                    color: #000;
-                                    padding: 5px;
-
-                                    &::before {
-                                        display: inline-block;
-                                        content: '∨';
-                                        transform: rotate(-90deg);
-                                        margin-right: 5px;
-                                    }
-                                }
-                            }
-
-                            &.gotop {
-                                bottom: auto;
-                                top: 24px;
-                            }
-                        }
-    
-                    }
-                }
-    
-            }
-        
-
-        }
-
-        .main-right {
-            width: calc(100% - 250px);
-            height: 100%;
-
-            .content-box {
-                width: 100%;
-                height: 100%;
-                overflow: hidden;
-
-                >.div {
-                    width: 100%;
-                    height: 100%;
-                    >ul {
-                        width: 100%;
-                        display: flex;
-
-                        >li {
-                            flex: 1;
-
-                            img {
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                            }
-                        }
-                    }
-                }
-            }
-
-        }
-    }
-
-    footer {
-        width: 100%;
-        height: 20px;
-        background-color: $light;
-        border-top: 1px solid $light-border;
-        display: flex;
-        gap: 10px;
-
-        .blue-icon {
-            width: 40px;
-            height: 100%;
-            background-color: $blue;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-
-            >img {
-                width: 50%;
-                height: 80%;
-                
-            }
-        }
-
-        ul {
-            display: flex;
-            height: 100%;
-            gap: 5px;
-            li {
-                display: flex;
-                height: 100%;
-                align-items: center;
-                gap: 5px;
-                >img {
-                    width: 15px;
-                    height: 15px;
-                    object-fit: cover;
-                }
-
-                span {
-                    font-size: 13px;
-                }
-            }
-        }
-    }
 }

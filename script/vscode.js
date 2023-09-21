@@ -10,17 +10,26 @@ const menu_List = document.querySelector('.menu_2depth');
 
 const menu_bottom = document.querySelector('.menu-bottom');
 
+const main = document.querySelector('main');
+
 header_gnb.forEach((el)=>{
     el.addEventListener(("click"),(e)=>{
         e.preventDefault();
         if(el.classList.contains('on')) {
-            el.classList.remove('on');
+            el.classList.remove('on');      
         } else {
+
             header_gnb.forEach((el)=>{
                 el.classList.remove('on');
             })
             el.classList.add('on');
         }
+    })
+})
+
+main.addEventListener(("click"), ()=>{
+    header_gnb.forEach((el)=>{
+        el.classList.remove('on');
     })
 })
 
