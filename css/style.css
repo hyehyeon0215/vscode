@@ -29,7 +29,7 @@ a {
   display: flex;
 }
 .main-right .active-tab > li {
-  min-width: 150px;
+  min-width: 140px;
   border-right: 1px solid #dfdfdf;
 }
 .main-right .active-tab > li > a {
@@ -62,10 +62,14 @@ a {
 }
 .main-right .active-tab > li.portfolio-tab {
   display: none;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  gap: 5px;
+  padding: 0 10px;
 }
 .main-right .active-tab > li.portfolio-tab > a {
+  width: auto;
+  height: 100%;
   display: flex;
   gap: 5px;
   font-size: 14px;
@@ -75,34 +79,34 @@ a {
   height: 16px;
   object-fit: cover;
 }
-.main-right .active-tab > li.portfolio-tab > a .tabclose {
-  display: none;
+.main-right .active-tab > li.portfolio-tab > a.tabclose {
+  visibility: hidden;
   width: 18px;
   height: 18px;
   border: none;
   outline: none;
-  background-color: inherit;
+  background-color: #fff;
   cursor: pointer;
   border-radius: 5px;
 }
-.main-right .active-tab > li.portfolio-tab > a .tabclose > img {
+.main-right .active-tab > li.portfolio-tab > a.tabclose > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.main-right .active-tab > li.portfolio-tab > a .tabclose:hover {
+.main-right .active-tab > li.portfolio-tab > a.tabclose:hover {
   background-color: #ececec;
 }
-.main-right .active-tab > li.portfolio-tab:hover .tabclose {
-  display: block;
+.main-right .active-tab > li.portfolio-tab:hover {
+  background-color: #fff;
+}
+.main-right .active-tab > li.portfolio-tab:hover a.tabclose {
+  visibility: visible;
 }
 .main-right .active-tab > li.portfolio-tab.on {
   display: flex;
 }
-.main-right .active-tab > li.portfolio-tab.active {
-  min-width: 180px;
-}
-.main-right .active-tab > li.portfolio-tab.active .tabclose {
+.main-right .active-tab > li.portfolio-tab.active a.tabclose {
   display: block;
 }
 .main-right .active-route {
@@ -136,6 +140,60 @@ a {
 .main-right .content-box .content.active {
   z-index: 1;
   opacity: 1;
+}
+.main-right .content-box .content.portfolio {
+  padding: 50px;
+}
+.main-right .content-box .content.portfolio .portfolio-title {
+  margin-bottom: 50px;
+}
+.main-right .content-box .content.portfolio > ul {
+  width: 100%;
+}
+.main-right .content-box .content.portfolio > ul > li {
+  width: 100%;
+  height: 400px;
+  overflow: hidden;
+  background-color: #f8f8f8;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  display: flex;
+  padding: 0 50px;
+}
+.main-right .content-box .content.portfolio > ul > li .content-left {
+  width: 40%;
+  height: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.main-right .content-box .content.portfolio > ul > li .content-left .mokup {
+  width: 100%;
+  height: 100%;
+}
+.main-right .content-box .content.portfolio > ul > li .content-left .mokup > img {
+  height: 100%;
+  object-fit: cover;
+}
+.main-right .content-box .content.portfolio > ul > li .content-right {
+  width: 60%;
+}
+.main-right .content-box .content.portfolio > ul > li .content-right .skills {
+  position: absolute;
+  display: flex;
+  gap: 0px;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.main-right .content-box .content.portfolio > ul > li .content-right .skills > li {
+  width: 30px;
+  height: 30px;
+  background-color: inherits;
+}
+.main-right .content-box .content.portfolio > ul > li .content-right .skills > li > img {
+  width: 30px;
+  height: 30px;
+  object-fit: cover;
 }
 
 .vs-wrap.dark {
@@ -809,6 +867,9 @@ a {
   border: 1px solid #0078D4;
   background-color: #e8e8e8;
 }
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li > a.open {
+  background-color: e4e6f1;
+}
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth {
   overflow: hidden;
   opacity: 1;
@@ -851,6 +912,9 @@ a {
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li:hover {
   background-color: #f2f2f2;
+}
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li.open {
+  background-color: #e4e6f1;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth.off {
   height: 0px;

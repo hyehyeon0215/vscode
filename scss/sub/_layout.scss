@@ -526,6 +526,10 @@
                                                 background-color: #e8e8e8;
                                             }
 
+                                            &.open {
+                                                background-color: e4e6f1;
+                                            }
+
                                         }
 
                                         .menu_3depth {
@@ -578,6 +582,10 @@
 
                                                 &:hover {
                                                     background-color: #f2f2f2;
+                                                }
+
+                                                &.open {
+                                                    background-color: #e4e6f1;
                                                 }
                                             }
 
