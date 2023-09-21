@@ -377,6 +377,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 5;
 }
 .vs-wrap header .header-left {
   display: flex;
@@ -675,9 +676,12 @@ a {
   position: relative;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li > a {
-  display: block;
+  display: flex;
+  width: 100%;
+  height: 24px;
   font: bold 14px/1 "맑은 고딕";
   color: #000;
+  align-items: center;
   padding: 5px;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li > a::before {
@@ -689,55 +693,78 @@ a {
   transform: rotate(-90deg);
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth {
-  padding: 7px 0;
-  transition: padding 0.5s;
   opacity: 1;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li {
-  margin-left: 30px;
   position: relative;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 10px;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li > a {
-  height: 16px;
-  font: 14px/1 "맑은 고딕";
-  color: #000;
-  display: flex;
-  align-items: center;
-}
-.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li > a.bracket {
+  display: block;
   position: relative;
+  width: 100%;
+  padding-left: 30px;
+  height: 24px;
+  font: 14px/24px "맑은 고딕";
+  color: #000;
+  border: 1px solid transparent;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li > a.bracket::before {
   display: block;
   position: absolute;
   content: "∨";
-  left: -15px;
+  left: 15px;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li > a.bracket.off::before {
   transform: rotate(-90deg);
 }
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li > a:hover {
+  background-color: #f2f2f2;
+}
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li > a:focus {
+  border: 1px solid #0078D4;
+  background-color: #e8e8e8;
+}
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth {
   overflow: hidden;
-  padding: 15px 0 0;
-  transition: padding 0.5s;
   opacity: 1;
 }
-.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li {
-  margin-left: 0px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin-bottom: 10px;
-}
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li > a {
-  display: inline-block;
-  height: 16px;
-  font: 13px/16px "맑은 고딕";
+  display: flex;
+  position: relative;
+  padding-left: 30px;
+  width: 100%;
+  height: 24px;
+  gap: 5px;
+  align-items: center;
+  width: 100%;
+  font: 13px/1 "맑은 고딕";
   color: #000;
+  border: 1px solid transparent;
+}
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li > a > img {
+  width: 14px;
+  height: 14px;
+  object-fit: cover;
+}
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li > a:focus {
+  border: 1px solid #0078D4;
+  background-color: #e8e8e8;
+}
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li .line {
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 120px;
+  top: 24px;
+  left: 20px;
+  background-color: #ddd;
+  z-index: 3;
+}
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li .line.focusing {
+  background-color: #aaa;
+}
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li:hover {
+  background-color: #f2f2f2;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth.off {
   height: 0px;
@@ -745,31 +772,24 @@ a {
   padding: 0px;
   opacity: 0;
 }
-.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth::before {
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .line {
   display: block;
-  content: "";
   position: absolute;
   width: 1px;
-  height: 128px;
-  top: 23px;
-  left: -11px;
-  background-color: #dfdfdf;
+  height: 47px;
+  top: 0px;
+  left: 9px;
+  background-color: #ddd;
+  z-index: 3;
+}
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .line.focusing {
+  background-color: #aaa;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth.off {
   height: 0px;
   overflow: hidden;
   padding: 0px;
   opacity: 0;
-}
-.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth::before {
-  display: block;
-  content: "";
-  position: absolute;
-  width: 1px;
-  height: 48px;
-  top: 25px;
-  left: 9px;
-  background-color: #dfdfdf;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) > .menu-bottom {
   width: 100%;

@@ -68,3 +68,34 @@ menu_Btn.addEventListener(("click"), (e)=>{
         menu_bottom.classList.add('gotop');
     }
 })
+
+const menu_3depth = document.querySelector('.menu_3depth');
+const menu_3depthList = document.querySelectorAll('.menu_3depth > li > a');
+const menu_2depth = document.querySelector('.menu_2depth');
+const menu_2depthList = document.querySelectorAll('.menu_2depth > li > a');
+
+menu_3depthList.forEach((el)=>{
+    el.addEventListener("focus", (e)=>{
+        e.preventDefault();
+        let line = menu_3depth.querySelector('.line2');
+        line.classList.add('focusing');
+    })
+    el.addEventListener("blur", (e)=>{
+        e.preventDefault();
+        let line = menu_3depth.querySelector('.line2');
+       line.classList.remove('focusing');
+    })
+})
+
+menu_2depthList.forEach((el)=>{
+    el.addEventListener("focus", (e)=>{
+        e.preventDefault();
+        let line = menu_2depth.querySelector('.line1');
+        line.classList.add('focusing');
+    })
+    el.addEventListener("blur", (e)=>{
+        e.preventDefault();
+        let line = menu_2depth.querySelector('.line1');
+        line.classList.remove('focusing');
+    })
+})

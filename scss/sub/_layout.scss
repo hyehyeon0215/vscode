@@ -14,6 +14,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        z-index: 5;
 
         .header-left {
             display: flex;
@@ -373,10 +374,14 @@
 
                         .menu_1depth {
                             >li {
+
                                 >a {
-                                    display: block;
+                                    display: flex;
+                                    width: 100%;
+                                    height: 24px;
                                     font: bold 14px/1 '맑은 고딕';
                                     color: #000;
+                                    align-items: center;
                                     padding: 5px;
 
                                     &::before {
@@ -385,40 +390,36 @@
                                         margin-right: 5px;
                                     }
 
-                                    
                                     &.off {
                                         &::before {
                                             transform: rotate(-90deg);
                                         }
                                     }
+
                                 }
 
                                 .menu_2depth {
-                                    padding: 7px 0;
-                                    transition: padding 0.5s;
                                     opacity: 1;
 
                                     >li {
-                                        margin-left: 30px;
                                         position: relative;
-                                        align-items: center;
-                                        gap: 5px;
-                                        margin-bottom: 10px;
 
                                         >a {
-                                            height: 16px;
-                                            font: 14px/1 '맑은 고딕';
+                                            display: block;
+                                            position: relative;
+                                            width: 100%;
+                                            padding-left: 30px;
+                                            height: 24px;
+                                            font: 14px/24px '맑은 고딕';
                                             color: #000;
-                                            display: flex;
-                                            align-items: center;
+                                            border: 1px solid transparent;
 
                                             &.bracket {
-                                                position: relative;
                                                 &::before {
                                                     display: block;
                                                     position: absolute;
                                                     content: '∨';
-                                                    left: -15px;
+                                                    left: 15px;
                                                 }
 
                                                 &.off {
@@ -428,28 +429,66 @@
                                                 }
                                             }
 
-                                            
+                                            &:hover {
+                                                background-color: #f2f2f2;
+                                            }
+
+                                            &:focus {
+                                                border: 1px solid $blue;
+                                                background-color: #e8e8e8;
+                                            }
+
                                         }
 
                                         .menu_3depth {
                                             overflow: hidden;
-                                            padding: 15px 0 0;
-                                            transition: padding 0.5s;
                                             opacity: 1;
 
                                             >li {
-                                                margin-left: 0px;
-                                                position: relative;
-                                                display: flex;
-                                                align-items: center;
-                                                gap: 5px;
-                                                margin-bottom: 10px;
 
                                                 >a {
-                                                    display: inline-block;
-                                                    height: 16px;
-                                                    font: 13px/16px '맑은 고딕';
+                                                    display: flex;
+                                                    position: relative;
+                                                    padding-left: 30px;
+                                                    width: 100%;
+                                                    height: 24px;
+                                                    gap: 5px;
+                                                    align-items: center;
+                                                    width: 100%;
+                                                    font: 13px/1 '맑은 고딕';
                                                     color: #000;
+                                                    border: 1px solid transparent;
+
+                                                    >img {
+                                                        width: 14px;
+                                                        height: 14px;
+                                                        object-fit: cover;
+                                                    }
+                                                    
+                                                    &:focus {
+                                                        border: 1px solid $blue;
+                                                        background-color: #e8e8e8;
+                                                    }
+
+                                                }
+
+                                                .line {
+                                                    display: block;
+                                                    position: absolute;
+                                                    width: 1px;
+                                                    height: 120px;
+                                                    top: 24px;
+                                                    left: 20px;
+                                                    background-color: #ddd;
+                                                    z-index: 3;
+
+                                                    &.focusing {
+                                                        background-color: #aaa;
+                                                    }
+                                                }
+
+                                                &:hover {
+                                                    background-color: #f2f2f2;
                                                 }
                                             }
 
@@ -459,20 +498,22 @@
                                                 padding: 0px;
                                                 opacity: 0;
                                             }
-
-                                            &::before {
-                                                display: block;
-                                                content: '';
-                                                position: absolute;
-                                                width: 1px;
-                                                height: 128px;
-                                                top: 23px;
-                                                left: -11px;
-                                                background-color: #dfdfdf;
-                                            }
                                         }
 
+                                        .line {
+                                            display: block;
+                                            position: absolute;
+                                            width: 1px;
+                                            height: 47px;
+                                            top: 0px;
+                                            left: 9px;
+                                            background-color: #ddd;
+                                            z-index: 3;
 
+                                            &.focusing {
+                                                background-color: #aaa;
+                                            }
+                                        }
                                     }
 
                                     &.off {
@@ -481,18 +522,6 @@
                                         padding: 0px;
                                         opacity: 0;
                                     }
-
-                                    &::before {
-                                        display: block;
-                                        content: '';
-                                        position: absolute;
-                                        width: 1px;
-                                        height: 48px;
-                                        top: 25px;
-                                        left: 9px;
-                                        background-color: #dfdfdf;
-                                    }
-
                                 }
                             }
                         }
@@ -526,6 +555,8 @@
                         }
     
                     }
+
+
                 }
     
             }
