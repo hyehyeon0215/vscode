@@ -30,14 +30,19 @@ a {
 }
 .main-right .active-tab > li {
   min-width: 150px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   border-right: 1px solid #dfdfdf;
 }
 .main-right .active-tab > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
   font-size: 14px;
   color: #000;
+}
+.main-right .active-tab > li > a:hover {
+  background-color: #fff;
 }
 .main-right .active-tab > li.active {
   background-color: #fff;
@@ -55,6 +60,51 @@ a {
   left: 0;
   background-color: #0078D4;
 }
+.main-right .active-tab > li.portfolio-tab {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+.main-right .active-tab > li.portfolio-tab > a {
+  display: flex;
+  gap: 5px;
+  font-size: 14px;
+}
+.main-right .active-tab > li.portfolio-tab > a > img {
+  width: 16px;
+  height: 16px;
+  object-fit: cover;
+}
+.main-right .active-tab > li.portfolio-tab > a .tabclose {
+  display: none;
+  width: 18px;
+  height: 18px;
+  border: none;
+  outline: none;
+  background-color: inherit;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.main-right .active-tab > li.portfolio-tab > a .tabclose > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.main-right .active-tab > li.portfolio-tab > a .tabclose:hover {
+  background-color: #ececec;
+}
+.main-right .active-tab > li.portfolio-tab:hover .tabclose {
+  display: block;
+}
+.main-right .active-tab > li.portfolio-tab.on {
+  display: flex;
+}
+.main-right .active-tab > li.portfolio-tab.active {
+  min-width: 180px;
+}
+.main-right .active-tab > li.portfolio-tab.active .tabclose {
+  display: block;
+}
 .main-right .active-route {
   width: 100%;
   height: 24px;
@@ -70,24 +120,22 @@ a {
 }
 .main-right .content-box {
   width: 100%;
-  height: 100%;
-  overflow: hidden;
+  height: calc(100% - 20px);
+  overflow-y: scroll;
+  position: relative;
+  padding-bottom: 20px;
 }
-.main-right .content-box > .div {
+.main-right .content-box .content {
   width: 100%;
-  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
 }
-.main-right .content-box > .div > ul {
-  width: 100%;
-  display: flex;
-}
-.main-right .content-box > .div > ul > li {
-  flex: 1;
-}
-.main-right .content-box > .div > ul > li img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.main-right .content-box .content.active {
+  z-index: 1;
+  opacity: 1;
 }
 
 .vs-wrap.dark {
@@ -516,7 +564,7 @@ a {
   height: 100%;
   display: flex;
   justify-content: end;
-  gap: 20px;
+  gap: 5px;
 }
 .vs-wrap header .header-right > ul {
   height: 100%;
@@ -524,71 +572,75 @@ a {
   justify-content: center;
   align-items: center;
 }
-.vs-wrap header .header-right > ul > li {
+.vs-wrap header .header-right > ul.layout-menu {
+  gap: 5px;
+}
+.vs-wrap header .header-right > ul.layout-menu > li > a {
+  display: block;
+  width: 25px;
+  height: 25px;
+  position: relative;
+  border-radius: 5px;
+}
+.vs-wrap header .header-right > ul.layout-menu > li > a > img {
+  position: absolute;
   width: 20px;
   height: 20px;
-}
-.vs-wrap header .header-right > ul > li > a {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-.vs-wrap header .header-right > ul > li > a > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   opacity: 1;
 }
-.vs-wrap header .header-right > ul > li > a > img:nth-of-type(2) {
+.vs-wrap header .header-right > ul.layout-menu > li > a > img:nth-of-type(2) {
   z-index: 0;
   opacity: 0;
 }
-.vs-wrap header .header-right > ul.layout-menu {
-  gap: 10px;
+.vs-wrap header .header-right > ul.layout-menu > li > a:hover {
+  background-color: #dfdfdf;
 }
 .vs-wrap header .header-right > ul.program-menu {
-  gap: 25px;
-  margin: 0 20px;
-}
-.vs-wrap header .header-right > ul.program-menu > li {
-  width: 25px;
-  height: 25px;
-}
-.vs-wrap header .header-right .layout-menu {
   height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 10px;
 }
-.vs-wrap header .header-right .layout-menu > li {
-  width: 20px;
-  height: 20px;
+.vs-wrap header .header-right > ul.program-menu > li {
+  height: 100%;
 }
-.vs-wrap header .header-right .layout-menu > li > a {
-  display: block;
-  width: 100%;
+.vs-wrap header .header-right > ul.program-menu > li > a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
   height: 100%;
   position: relative;
 }
-.vs-wrap header .header-right .layout-menu > li > a > img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.vs-wrap header .header-right > ul.program-menu > li > a > img {
   position: absolute;
+  width: 24px;
+  height: 24px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
   opacity: 1;
 }
-.vs-wrap header .header-right .layout-menu > li > a > img:nth-of-type(2) {
+.vs-wrap header .header-right > ul.program-menu > li > a > img:nth-of-type(2) {
+  z-index: 0;
+  opacity: 0;
+}
+.vs-wrap header .header-right > ul.program-menu > li > a:hover {
+  background-color: #dfdfdf;
+}
+.vs-wrap header .header-right > ul.program-menu > li:nth-of-type(3) > a:hover {
+  background-color: red;
+}
+.vs-wrap header .header-right > ul.program-menu > li:nth-of-type(3) > a:hover img:nth-of-type(2) {
+  z-index: 1;
+  opacity: 1;
+}
+.vs-wrap header .header-right > ul.program-menu > li:nth-of-type(3) > a:hover img:nth-of-type(1) {
   z-index: 0;
   opacity: 0;
 }
@@ -638,11 +690,21 @@ a {
   display: block;
   width: 40px;
   height: 40px;
+  position: relative;
 }
 .vs-wrap main .main-left .icon-tab > li ul li a img {
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
+  z-index: 1;
+  opacity: 1;
+}
+.vs-wrap main .main-left .icon-tab > li ul li a img:nth-of-type(2) {
+  z-index: 0;
+  opacity: 0;
 }
 .vs-wrap main .main-left .icon-tab > li ul li.on .bar {
   opacity: 1;
@@ -707,6 +769,20 @@ a {
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li {
   position: relative;
 }
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .line {
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 47px;
+  top: 0px;
+  left: 9px;
+  background-color: #ddd;
+  z-index: 3;
+  transition: 0.3s;
+}
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .line.focusing {
+  background-color: #aaa;
+}
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li > a {
   display: block;
   position: relative;
@@ -737,6 +813,20 @@ a {
   overflow: hidden;
   opacity: 1;
 }
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li .line {
+  display: block;
+  position: absolute;
+  width: 1px;
+  height: 120px;
+  top: 24px;
+  left: 20px;
+  background-color: #ddd;
+  z-index: 3;
+  transition: 0.3s;
+}
+.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li .line.focusing {
+  background-color: #aaa;
+}
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li > a {
   display: flex;
   position: relative;
@@ -759,19 +849,6 @@ a {
   border: 1px solid #0078D4;
   background-color: #e8e8e8;
 }
-.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li .line {
-  display: block;
-  position: absolute;
-  width: 1px;
-  height: 120px;
-  top: 24px;
-  left: 20px;
-  background-color: #ddd;
-  z-index: 3;
-}
-.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li .line.focusing {
-  background-color: #aaa;
-}
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .menu_3depth > li:hover {
   background-color: #f2f2f2;
 }
@@ -780,19 +857,6 @@ a {
   overflow: hidden;
   padding: 0px;
   opacity: 0;
-}
-.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .line {
-  display: block;
-  position: absolute;
-  width: 1px;
-  height: 47px;
-  top: 0px;
-  left: 9px;
-  background-color: #ddd;
-  z-index: 3;
-}
-.vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth > li .line.focusing {
-  background-color: #aaa;
 }
 .vs-wrap main .main-left .main-menu > li:nth-of-type(2) .menu_1depth > li .menu_2depth.off {
   height: 0px;

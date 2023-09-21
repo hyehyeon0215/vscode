@@ -6,13 +6,14 @@
     <title>Visual Studio</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" type="image/png" sizes="16x16" href="../favicon/favicon-16x16.png">
-    <script defer src="../script/vscode.js"></script>
+    <script defer src="../script/layout.js"></script>
+    <script defer src="../script/content.js"></script>
 </head>
 <body>
     <div class="vs-wrap light">
         <header>
             <div class="header-left">
-                <h1><a href="vscode.html"><img src="../img/logo.png" alt="VScode 로고"></a></h1>
+                <h1><a href="../index.html"><img src="../img/logo.png" alt="VScode 로고"></a></h1>
                 <ul class="header-menu">
                     <li>
                         <a href="#">김혜현</a>
@@ -147,11 +148,11 @@
                                     <li class="menu-portfolio">
                                         <a href="#" class="bracket menu-click">포트폴리오</a>
                                         <ul class="menu_3depth">
-                                            <li><span class="line line2"></span><a href="#"><img src="../img/Portfolio/visitjeju_favicon.png" alt="">비짓제주</a></li>
-                                            <li><a href="#"><img src="../img/Portfolio/sinsegae_favicon.png" alt="">신세계건설</a></li>
-                                            <li><a href="#"><img src="../img/Portfolio/shear-favicon.png" alt="">쉬어매드니스</a></li>
-                                            <li><a href="#"><img src="../img/Portfolio/lush_favicon.png" alt="">러쉬</a></li>
-                                            <li><a href="#"><img src="../img/Portfolio/vscode_favicon.png" alt="">비주얼스튜디오</a></li>
+                                            <li data-route="김혜현 > 포트폴리오 > 비짓제주" data-content="portfolio-visitjeju"><span class="line line2"></span><a href="#"><img src="../img/Portfolio/visitjeju_favicon.png" alt="">비짓제주</a></li>
+                                            <li data-route="김혜현 > 포트폴리오 > 신세계건설" data-content="portfolio-sinsegae"><a href="#"><img src="../img/Portfolio/sinsegae_favicon.png" alt="">신세계건설</a></li>
+                                            <li data-route="김혜현 > 포트폴리오 > 쉬어매드니스" data-content="portfolio-shear"><a href="#"><img src="../img/Portfolio/shear-favicon.png" alt="">쉬어매드니스</a></li>
+                                            <li data-route="김혜현 > 포트폴리오 > 러쉬" data-content="portfolio-lush"><a href="#"><img src="../img/Portfolio/lush_favicon.png" alt="">러쉬</a></li>
+                                            <li data-route="김혜현 > 포트폴리오 > 비주얼스튜디오" data-content="portfolio-vscode"><a href="#"><img src="../img/Portfolio/vscode_favicon.png" alt="">비주얼스튜디오</a></li>
                                         </ul>
                                     </li>
                                 </ul>
@@ -167,21 +168,25 @@
             </div>
             <div class="main-right">
                 <ul class="active-tab">
-                    <li class="active"><a href="#">프로필</a></li>
-                    <li><a href="#">포트폴리오</a></li>
+                    <li class="active" data-route="김혜현 > 프로필" data-content="profile"><a href="#">프로필</a></li>
+                    <li data-route="김혜현 > 포트폴리오" data-content="portfolio"><a href="#">포트폴리오</a></li>
+                    <li class="portfolio-tab" data-route="김혜현 > 포트폴리오 > 비짓제주" data-content="portfolio-visitjeju"><a href="#"><img src="../img/Portfolio/visitjeju_favicon.png" alt="">비짓제주<button class="tabclose"><img src="../img/icon/program3-b.svg" alt=""></button></a></li>
+                    <li class="portfolio-tab" data-route="김혜현 > 포트폴리오 > 신세계건설" data-content="portfolio-sinsegae"><a href="#"><img src="../img/Portfolio/sinsegae_favicon.png" alt="">신세계건설<button class="tabclose"><img src="../img/icon/program3-b.svg" alt=""></button></a></li>
+                    <li class="portfolio-tab" data-route="김혜현 > 포트폴리오 > 쉬어매드니스" data-content="portfolio-shear"><a href="#"><img src="../img/Portfolio/shear-favicon.png" alt="">쉬어매드니스<button class="tabclose"><img src="../img/icon/program3-b.svg" alt=""></button></a></li>
+                    <li class="portfolio-tab" data-route="김혜현 > 포트폴리오 > 러쉬" data-content="portfolio-lush"><a href="#"><img src="../img/Portfolio/lush_favicon.png" alt="">러쉬<button class="tabclose"><img src="../img/icon/program3-b.svg" alt=""></button></a></li>
+                    <li class="portfolio-tab" data-route="김혜현 > 포트폴리오 > 비주얼스튜디오" data-content="portfolio-vscode"><a href="#"><img src="../img/Portfolio/vscode_favicon.png" alt="">비주얼스튜디오<button class="tabclose"><img src="../img/icon/program3-b.svg" alt=""></button></a></li>
                 </ul>
                 <p class="active-route">
                     <span>김혜현 > 프로필</span>
                 </p>
                 <div class="content-box">
-                    <div class="div">
-                        <ul>
-                            <li><a href="#"><img src="../img/Portfolio/Gray Modern Website Launch Announcement Instagram Post (1).png" alt=""></a></li>
-                            <li><a href="#"><img src="../img/Portfolio/Gray Modern Website Launch Announcement Instagram Post (2).png" alt=""></a></li>
-                            <li><a href="#"><img src="../img/Portfolio/Gray Modern Website Launch Announcement Instagram Post (3).png" alt=""></a></li>
-                            <li><a href="#"><img src="../img/Portfolio/Gray Modern Website Launch Announcement Instagram Post.png" alt=""></a></li>
-                        </ul>
-                    </div>
+                    <div class="content profile active">프로필</div>
+                    <div class="content portfolio">포트폴리오</div>
+                    <div class="content portfolio-visitjeju">비짓제주 <img src="../img/Portfolio/Gray Modern Website Launch Announcement Instagram Post (1).png" alt=""><img src="../img/Portfolio/Gray Modern Website Launch Announcement Instagram Post (1).png" alt=""></div>
+                    <div class="content portfolio-sinsegae">신세계</div>
+                    <div class="content portfolio-shear">쉬어</div>
+                    <div class="content portfolio-lush">러쉬</div>
+                    <div class="content portfolio-vscode">비주얼</div>
                 </div>
             </div>
         </main>
