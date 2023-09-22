@@ -170,7 +170,6 @@
                         margin-bottom: 50px;
                         border-radius: 20px;
                         display: flex;
-                        padding: 0 50px;
 
                         .content-left {
                             width: 40%;
@@ -181,36 +180,125 @@
                             .mokup {
                                 width: 100%;
                                 height: 100%;
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                z-index: 1;
+                                display: flex;
+                                justify-content: center;
+                                align-items: center;
+
+                                >img {
+                                    width: 60%;
+                                    object-fit: cover;
+                                }
+                            }
+
+                            .mokup-bg {
+                                width: 50%;
+                                height: 50%;
+                                opacity: .7;
+                                position: absolute;
+                                bottom: 0;
+                                right: 0;
+                            }
+                        }
+
+                        .content-right {
+                            width: 60%;
+                            padding: 40px 20px;
+                            position: relative;
+
+                            .content-logo {
+                                width: 100%;
+                                height: 30px;
 
                                 >img {
                                     height: 100%;
                                     object-fit: cover;
                                 }
                             }
-                        }
 
-                        .content-right {
-                            width: 60%;
+                            h2 {
+                                font-size: 26px;
+                                font-family: 'NotoSansKR';
+                                margin-bottom: 20px;
+                            }
 
                             .skills {
-                                position: absolute;
                                 display: flex;
                                 gap: 0px;
-                                bottom: 20px;
-                                left: 50%;
-                                transform: translateX(-50%);
+                                margin-bottom: 20px;
 
                                 >li {
-                                    width: 30px;
-                                    height: 30px;
-                                    background-color: inherits;
+                                    width: 25px;
+                                    height: 25px;
 
                                     >img {
-                                        width: 30px;
-                                        height: 30px;
+                                        width: 25px;
+                                        height: 25px;
                                         object-fit: cover;
                                     }
                                 }
+                            }
+
+                            .content-page {
+                                display: flex;
+                                margin-bottom: 20px;
+                                gap: 10px;
+
+                                >li {
+                                    >a {
+                                        padding: 5px 10px;
+                                        border-radius: 15px;
+                                        background-color: #fff;
+                                        color: #333;
+                                        font-weight: bold;
+                                        border: 1px solid #ef6d00;
+                                        font-family: 'NotoSansKR';
+                                        font-size: 14px;
+                                        transition: background-color .3s;
+
+                                        &:hover {
+                                            background-color: #ef6d00;
+                                            color: #fff;
+                                        }
+                                    }
+                                }
+                            }
+
+                            >p {
+                                font: 16px/1.5 'NotoSansKR';
+                                margin-bottom: 20px;
+                            }
+
+                            .content-txt {
+                                li {
+                                    margin-bottom: 15px;
+                                    p {
+                                        display: flex;
+                                        gap: 30px;
+
+                                        >span {
+                                            min-width: 80px;
+
+                                            &:nth-of-type(1) {
+                                                font-weight: bold;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .content-nextBtn {
+                                position: absolute;
+                                bottom: 30px;
+                                right: 40px;
+                                display: block;
+                                padding: 7px 40px;
+                                background-color: #ef6d00;
+                                color: #fff;
+                                font-weight: bold;
                             }
                         }
                     }

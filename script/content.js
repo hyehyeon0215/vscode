@@ -3,9 +3,67 @@ const active_tabList = active_tab.querySelectorAll('li');
 const active_route = document.querySelector('.active-route > span');
 const content_list = document.querySelectorAll('.content');
 
-// const main_1depth = document.querySelectorAll('.menu_1depth > li');
-// const main_2depth = document.querySelectorAll('.menu_2depth > li');
+const main_2depth = document.querySelectorAll('.menu_2depth > li > a');
 const main_3depth = document.querySelectorAll('.menu_3depth > li');
+const main_sub = [...main_2depth, ...main_3depth];
+
+
+const header_sub = document.querySelectorAll('.header-sub > li')
+
+header_sub.forEach((el, index)=>{
+    el.addEventListener(("click"),(e)=>{
+        e.preventDefault();
+        active_tabList.forEach((el)=>{
+            el.classList.remove('active');
+            if(el.dataset.route == header_sub[index].dataset.route) {
+                el.classList.add('active');
+                let route = el.dataset.route;
+                let content = el.dataset.content;
+                active_route.innerHTML = route;
+        
+                content_list.forEach((el)=>{
+                    el.classList.remove('active');
+                    if(el.classList.contains(content)) {
+                        el.classList.add('active');
+                    }
+                })
+            }
+        })
+        main_sub.forEach((el)=>{
+            el.classList.remove('open');
+
+            if(header_sub[index].dataset.route == el.dataset.route) {
+                main_sub[index].classList.add('open');
+            }
+        })
+    })
+})
+
+
+main_2depth.forEach((el, index)=>{
+    el.addEventListener(("click"),(e)=>{
+        e.preventDefault();
+        active_tabList.forEach((el)=>{
+            el.classList.remove('active');
+            if(el.dataset.route == main_2depth[index].dataset.route) {
+                el.classList.add('active');
+                let route = el.dataset.route;
+                let content = el.dataset.content;
+                active_route.innerHTML = route;
+        
+                content_list.forEach((el)=>{
+                    el.classList.remove('active');
+                    if(el.classList.contains(content)) {
+                        el.classList.add('active');
+                    }
+                })
+            }
+        })
+        main_sub.forEach((el)=>{
+            el.classList.remove('open');
+        })
+    })
+})
 
 
 main_3depth.forEach((el, index)=>{
@@ -28,10 +86,13 @@ main_3depth.forEach((el, index)=>{
                 })
             }
         })
+        main_sub.forEach((el)=>{
+            el.classList.remove('open');
+        })
     })
 })
 
-active_tabList.forEach((el)=>{
+active_tabList.forEach((el, index)=>{
     el.addEventListener(("click"), (e)=>{
         e.preventDefault();
         console.log(e.target);
@@ -70,5 +131,15 @@ active_tabList.forEach((el)=>{
             })
         }
 
+        if(el.classList.contains('active')) {
+            main_sub.forEach((el)=>{
+                el.classList.remove('open');
+                if(active_tabList[index].dataset.route == el.dataset.route) {
+                    main_sub[index].classList.add('open');
+                }
+            })
+        }
+
     })
+
 })
