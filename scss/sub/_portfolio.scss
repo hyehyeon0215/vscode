@@ -1,0 +1,344 @@
+.portfolio {
+    padding: 50px;
+
+    .portfolio-title {
+        width: 100%;
+        padding: 0px 0 50px;
+
+        >h2 {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+
+            >img {
+                height: 100%;
+            }
+
+            &::after {
+                display: block;
+                content: '';
+                width: 3px;
+                height: 40%;
+                background-color: #333;
+                opacity: 1;
+                animation: opacity 1s step-end infinite;
+            }
+        }
+    }
+    
+    >ul {
+        width: 100%;
+
+        >li {
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            background-color: #f8f8f8;
+            margin-bottom: 50px;
+            border-radius: 20px;
+            display: flex;
+
+            .content-left {
+                width: 40%;
+                height: 100%;
+                overflow: hidden;
+                position: relative;
+                
+                .mokup {
+                    width: 100%;
+                    height: 100%;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    z-index: 1;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+
+                    >img {
+                        width: 60%;
+                        object-fit: cover;
+                    }
+                }
+
+                .mokup-bg {
+                    width: 50%;
+                    height: 50%;
+                    opacity: .7;
+                    position: absolute;
+                    bottom: 0;
+                    right: 0;
+                }
+            }
+
+            .content-right {
+                width: 60%;
+                padding: 40px 20px;
+                position: relative;
+
+                .content-logo {
+                    width: 100%;
+                    height: 30px;
+                    display: flex;
+                    align-items: center;
+
+                    >img {
+                        height: 100%;
+                        object-fit: cover;
+                    }
+                }
+
+                h2 {
+                    font-size: 26px;
+                    font-family: 'NotoSansKR';
+                    margin-bottom: 20px;
+                }
+
+                .skills {
+                    display: flex;
+                    gap: 0px;
+                    margin-bottom: 20px;
+
+                    >li {
+                        width: 25px;
+                        height: 25px;
+
+                        >img {
+                            width: 25px;
+                            height: 25px;
+                            object-fit: cover;
+                        }
+                    }
+                }
+
+                .content-page {
+                    display: flex;
+                    margin-bottom: 20px;
+                    gap: 10px;
+
+                    >li {
+                        >a {
+                            padding: 5px 10px;
+                            border-radius: 15px;
+                            background-color: #fff;
+                            color: #333;
+                            font-weight: bold;
+                            border: 1px solid #ef6d00;
+                            font-family: 'NotoSansKR';
+                            font-size: 14px;
+                            transition: background-color .3s;
+
+                            &:hover {
+                                background-color: #ef6d00;
+                                color: #fff;
+                            }
+                        }
+                    }
+                }
+
+                >p {
+                    font: 16px/1.5 'NotoSansKR';
+                    margin-bottom: 20px;
+                }
+
+                .content-txt {
+                    li {
+                        margin-bottom: 15px;
+                        p {
+                            display: flex;
+                            gap: 30px;
+
+                            >span {
+                                min-width: 80px;
+
+                                &:nth-of-type(1) {
+                                    font-weight: bold;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .content-nextBtn {
+                    position: absolute;
+                    bottom: 30px;
+                    right: 40px;
+                    display: block;
+                    padding: 7px 40px;
+                    background-color: #ef6d00;
+                    color: #fff;
+                    font-weight: bold;
+                }
+            }
+
+            &.vscode-contentBox {
+                .content-left {
+                    .mokup-bg {
+                        bottom: auto;
+                        right: auto;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                .content-right {
+                    .content-logo {
+                        >img {
+                            height: 80%;
+                        }
+                    }
+
+                    .content-page {
+                        >li {
+                            >a {
+                                border: 1px solid $vscode;
+
+                                &:hover {
+                                    background-color: $vscode;
+                                }
+                            }
+                        }
+                    }
+
+                    .content-nextBtn {
+                        background-color: $vscode;
+                    }
+                }
+            }
+
+            &.visitjeju-contentBox {
+                .content-left {
+                    .mokup-bg {
+                        bottom: 20px;
+                    }
+                }
+                .content-right {
+                    .content-logo {
+                        height: 25px;
+                    }
+
+                    .content-page {
+                        >li {
+                            >a {
+                                border: 1px solid $visitjeju;
+
+                                &:hover {
+                                    background-color: $visitjeju;
+                                }
+                            }
+                        }
+                    }
+
+                    .content-nextBtn {
+                        background-color: $visitjeju;
+                    }
+                }
+            }
+
+            &.sinsegae-contentBox {
+                .content-left {
+                    .mokup-bg {
+                        right: auto;
+                        bottom: auto;
+                        top: 50%;
+                        transform: translateY(-50%);
+                    }
+                }
+                .content-right {
+                    .content-logo {
+                        >img {
+                            height: 80%;
+                        }
+                    }
+
+                    .content-page {
+                        >li {
+                            >a {
+                                border: 1px solid $sinsaegae;
+
+                                &:hover {
+                                    background-color: $sinsaegae;
+                                }
+                            }
+                        }
+                    }
+
+                    .content-nextBtn {
+                        background-color: $sinsaegae;
+                    }
+                }
+            }
+
+            &.shear-contentBox {
+                .content-left {
+                    .mokup-bg {
+                        bottom: auto;
+                        top: 0;
+                    }
+                }
+                .content-right {
+                    .content-logo {
+                        >img {
+                            height: 70%;
+                        }
+                    }
+
+                    .content-page {
+                        >li {
+                            >a {
+                                border: 1px solid $shearmadness;
+
+                                &:hover {
+                                    background-color: $shearmadness;
+                                }
+                            }
+                        }
+                    }
+
+                    .content-nextBtn {
+                        background-color: $shearmadness;
+                    }
+                }
+            }
+
+            &.lush-contentBox {
+                .content-left {
+                    .mokup-bg {
+                        bottom: auto;
+                        right: auto;
+                        top: 0;
+                        left: 0;
+                    }
+                }
+                .content-right {
+                    .content-logo {
+                        >img {
+                            height: 60%;
+                        }
+                    }
+
+                    .content-page {
+                        >li {
+                            >a {
+                                border: 1px solid $lush;
+
+                                &:hover {
+                                    background-color: $lush;
+                                }
+                            }
+                        }
+                    }
+
+                    .content-nextBtn {
+                        background-color: $lush;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@keyframes opacity {
+    50% {opacity: 0;}
+}
