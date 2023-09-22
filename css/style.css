@@ -1,5 +1,6 @@
 @charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -990,6 +991,88 @@ a {
 }
 .vs-wrap footer ul li span {
   font-size: 13px;
+}
+
+#mainPage {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#mainPage > h2 {
+  margin-top: -150px;
+  font: bold 40px/1 "NotoSansKR";
+  margin-bottom: 50px;
+}
+#mainPage ul {
+  display: flex;
+  margin: 0 auto;
+}
+#mainPage ul > li {
+  flex: 1;
+}
+#mainPage ul > li #filter-svg, #mainPage ul > li #filter-svg2 {
+  display: none;
+}
+#mainPage ul > li a {
+  display: block;
+  width: 200px;
+  height: 200px;
+  position: relative;
+  filter: url(#goo);
+}
+#mainPage ul > li a .Btn-txt {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: bold;
+  text-align: center;
+}
+#mainPage ul > li a .Btn-txt.lightBtn-txt {
+  color: #181818;
+}
+#mainPage ul > li a .Btn-txt.darkBtn-txt {
+  color: #f8f8f8;
+}
+#mainPage ul > li a span {
+  border-radius: 50%;
+  position: absolute;
+  transition: all 0.5s cubic-bezier(0.75, 0.32, 0, 0.93);
+  z-index: 1;
+  background-color: inherit;
+}
+#mainPage ul > li a span:nth-of-type(2) {
+  width: 100px;
+  height: 100px;
+  top: calc(50% - 50px);
+  right: calc(50% - 50px);
+}
+#mainPage ul > li a span:nth-of-type(3) {
+  width: 50px;
+  height: 50px;
+  top: calc(50% - 25px);
+  right: calc(50% - 25px);
+}
+#mainPage ul > li a span:nth-of-type(4) {
+  width: 70px;
+  height: 70px;
+  top: calc(50% - 35px);
+  right: calc(50% - 35px);
+}
+#mainPage ul > li a:hover span:nth-of-type(2) {
+  right: -50px;
+  top: 70%;
+}
+#mainPage ul > li a:hover span:nth-of-type(3) {
+  left: -70px;
+}
+#mainPage ul > li a:hover span:nth-of-type(3) {
+  right: -50px;
+  top: 70%;
 }
 
 /*# sourceMappingURL=style.css.map */
