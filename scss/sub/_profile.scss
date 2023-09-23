@@ -1,0 +1,35 @@
+.profile {
+    padding: 50px;
+
+    .profile-title {
+        width: 100%;
+        padding: 0px 0 50px;
+
+        >h2 {
+            width: 100%;
+            height: 80px;
+            display: flex;
+            align-items: center;
+
+            >img {
+                height: 100%;
+            }
+
+            &::after {
+                display: block;
+                content: '';
+                width: 3px;
+                height: 40%;
+                background-color: #333;
+                opacity: 1;
+                animation: opacity 1s step-end infinite;
+            }
+        }
+    }
+
+}
+
+
+@keyframes opacity {
+    50% {opacity: 0;}
+}
