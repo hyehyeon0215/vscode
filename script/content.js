@@ -143,3 +143,17 @@ active_tabList.forEach((el, index)=>{
     })
 
 })
+
+//토글키
+
+const toggle_btn = document.querySelector('#switch');
+const vs_wrap = document.querySelector('.vs-wrap');
+
+
+toggle_btn.addEventListener("click", ()=>{
+    if(vs_wrap.classList.contains('dark-theme')) {
+        vs_wrap.classList.remove('dark-theme');
+    } else {
+        vs_wrap.classList.add('dark-theme');
+    }
+})

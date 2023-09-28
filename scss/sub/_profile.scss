@@ -2,6 +2,7 @@
     padding: 50px 100px 50px;
     width: 100%;
     height: calc(100% - 34px);
+    -webkit-scrollbar: 0px;
 
     .profile-title {
         width: 100%;
@@ -15,6 +16,10 @@
 
             >img {
                 height: 100%;
+
+                &:nth-of-type(2) {
+                    display: none;
+                }
             }
 
             &::after {
@@ -47,6 +52,7 @@
                 font-size: 40px;
                 line-height: 1.5;
                 margin-bottom: 50px;
+                color: #000;
             }
     
             ul {
@@ -73,6 +79,7 @@
 
                     span {
                         font-weight: bold;
+                        color: #000;
                     }
                 }
             }
@@ -85,6 +92,7 @@
                 h3 {
                     font-size: 26px;
                     margin-bottom: 30px;
+                    color: #000;
 
                     >i {
                         margin-right: 10px;
@@ -137,6 +145,7 @@
                                 display: inline-block;
                                 font-size: 16px;
                                 position: relative;
+                                color: #000;
 
                                 &:first-of-type {
                                     font-weight: bold;
@@ -162,6 +171,94 @@
 
     }
 
+}
+
+.vs-wrap {
+    &.dark-theme {
+        .profile {
+            .profile-title {
+                >h2 {
+                    img {
+                        &:nth-of-type(1) {
+                            display: none;
+                        }
+
+                        &:nth-of-type(2) {
+                            display: block;
+                        }
+                    }
+                    
+                    &::after {
+                        background-color: #999;
+                    }
+                    
+                }
+            }
+
+            .profile-content {
+                .profile-txt {
+                    h2 {
+                        color: #fff;
+                    }
+
+                    ul {
+                        li {
+                            i {
+                                color: #888;
+                            }
+
+                            &:nth-of-type(2) {
+                                i {
+                                    color: #ddd;
+                                }
+                            }
+
+                            span {
+                                color: #f8f8f8;
+                            }
+                        }
+                    }
+                }
+
+                .profile-box {
+                    >div {
+                        h3 {
+                            color: #fff;
+
+                            >i {
+                                color: #888;
+                            }
+                        }
+
+                        &:first-of-type {
+                            ul {
+                                li {
+                                    background-color: rgba($color: #f8f8f8, $alpha: .2);
+                                }
+                            }
+                        }
+
+                        &:last-of-type {
+                            ul {
+                                li {
+                                    span {
+                                        color: #f8f8f8;
+
+                                        &:first-of-type {
+                                            &::after {
+                                                background-color: #eee;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
 }
 
 

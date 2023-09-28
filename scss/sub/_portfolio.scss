@@ -13,6 +13,10 @@
 
             >img {
                 height: 100%;
+
+                &:nth-of-type(2) {
+                    display: none;
+                }
             }
 
             &::after {
@@ -105,6 +109,7 @@
                     font-size: 26px;
                     font-family: 'NotoSansKR';
                     margin-bottom: 20px;
+                    color: #000;
                 }
 
                 .skills {
@@ -166,6 +171,7 @@
 
                             >span {
                                 min-width: 150px;
+                                color: #000;
 
                                 &:nth-of-type(1) {
                                     font-weight: bold;
@@ -257,6 +263,10 @@
                     .content-logo {
                         >img {
                             height: 80%;
+
+                            &:nth-of-type(3) {
+                                display: none;
+                            }
                         }
                     }
 
@@ -319,6 +329,10 @@
                     .content-logo {
                         >img {
                             height: 60%;
+
+                            &:last-of-type {
+                                display: none;
+                            }
                         }
                     }
 
@@ -336,6 +350,96 @@
                         background-color: $lush;
                     }
                 }
+            }
+        }
+    }
+}
+
+.vs-wrap {
+    &.dark-theme {
+        .portfolio {
+            .portfolio-title {
+                h2 {
+                    >img {
+                        &:nth-of-type(2) {
+                            display: block;
+                        }
+                        &:nth-of-type(1) {
+                            display: none;
+                        }
+                    }
+
+                    &::after {
+                        background-color: #999;
+                    }
+                }
+            }
+
+            >ul {
+                >li {
+                    background-color: rgba($color: #f8f8f8, $alpha: .2);
+                
+                    .content-right {
+                        h2 {
+                            color: #fff;
+                        }
+
+                        .content-page {
+                            li {
+                                a {
+                                    color: #f8f8f8;
+                                }
+                            }
+                        }
+
+                        .content-txt {
+                            li {
+                                p {
+                                    span {
+                                        color: #ddd;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.sinsegae-contentBox {
+                        .content-right {
+                            .content-logo {
+                                >img {
+                                    height: 80%;
+                                    &:nth-of-type(3) {
+                                        display: block;
+                                    }
+    
+                                    &:nth-of-type(2) {
+                                        display: none;
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.lush-contentBox {
+                        .content-right {
+                            .content-logo {
+                                >img {
+                                    height: 60%;
+        
+                                    &:first-of-type{
+                                        display: none;
+                                    }
+
+                                    &:last-of-type{
+                                        display: block;
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                }
+
             }
         }
     }
